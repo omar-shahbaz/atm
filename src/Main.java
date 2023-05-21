@@ -40,6 +40,7 @@ public class Main {
         else {
             System.out.print("Error!, wrong username/password");
             System.out.println("Testing");
+            System.out.println("Testing 2");
         }
     }
 }
