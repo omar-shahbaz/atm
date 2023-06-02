@@ -6,10 +6,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-        System.out.println("Hello World!");
+        
         Transaction transaction = new TransactionImpl();
 
+        System.out.println("Hello World!");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Username: ");
         String currentUser = scanner.nextLine();
@@ -39,8 +39,6 @@ public class Main {
         }
         else {
             System.out.print("Error!, wrong username/password");
-            System.out.println("Testing");
-            System.out.println("Testing 2");
         }
     }
 }
