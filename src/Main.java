@@ -9,7 +9,6 @@ public class Main {
         
         Transaction transaction = new TransactionImpl();
 
-        System.out.println("Hello World!");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Username: ");
         String currentUser = scanner.nextLine();
