@@ -29,17 +29,15 @@ public class Main {
                 int choice = option.nextInt();
                 switch (choice) {
                     case 1:
+                        System.out.print("Withdraw amount: ");
                         transaction.withdraw(option.nextInt());
-
                         break;
                     case 2:
                         System.out.print("Deposit amount: ");
                         transaction.deposit(option.nextInt());
-
                         break;
                     case 3:
                         transaction.checkBalance();
-
                         break;
                     default:
                         System.out.println("Invalid operation!");
