@@ -27,28 +27,23 @@ public class Main {
                 System.out.println("3. Check Balance");
                 System.out.print("Choose: ");
                 int choice = option.nextInt();
-                do {
-                    switch (choice) {
-                        case 1:
-                            System.out.print("Amount to Withdraw: ");
-                            transaction.withdraw(option.nextInt());
+                switch (choice) {
+                    case 1:
+                        transaction.withdraw(option.nextInt());
 
-                            break;
-                        case 2:
-                            System.out.print("Amount to deposit");
-                            transaction.deposit(option.nextInt());
+                        break;
+                    case 2:
+                        transaction.deposit(option.nextInt());
 
-                            break;
-                        case 3:
-                            System.out.print("Check balance: ");
-                            transaction.checkBalance();
+                        break;
+                    case 3:
+                        transaction.checkBalance();
 
-                            break;
-                        default:
-                            System.out.println("Invalid operation!");
-                    }
-                    check=false;
-                }while(check);
+                        break;
+                    default:
+                        System.out.println("Invalid operation!");
+                }
+                check=false;
             }while (true);
         }
         else {
