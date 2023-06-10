@@ -42,8 +42,13 @@ public class Main {
                     default:
                         System.out.println("Invalid operation!");
                 }
-                check=false;
-            }while (true);
+                System.out.print("Do you want to continue y/n:  ");
+                Scanner scanner1 = new Scanner(System.in);
+                char progress = scanner1.nextLine().charAt(0);
+                if(progress =='N' || progress == 'n'){
+                    check = false;
+                }
+            }while (check);
         }
         else {
             System.out.print("Error!, wrong username/password");
