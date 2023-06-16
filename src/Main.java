@@ -1,25 +1,32 @@
 import authUser.UserAuth;
+import payload.BankDetails;
 import service.Transaction;
 import serviceImpl.TransactionImpl;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
-        
+        BankDetails bankDetails = new BankDetails();
         Transaction transaction = new TransactionImpl();
         boolean check = true;
-
+        bankDetails.createBankLogin();
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Username: ");
+        System.out.print("\t\tUsername: ");
         String currentUser = scanner.nextLine();
-        System.out.print("Pin: ");
+        System.out.print("\t\tPin: ");
         Integer currentPin = scanner.nextInt();
-
         Scanner option = new Scanner(System.in);
+        System.out.println();
 
         if(UserAuth.USERNAME.equals(currentUser) && UserAuth.PIN.equals(currentPin)){
-            System.out.println("Welcome! "+currentUser);
+            bankDetails.createBankScreen();
+
+            System.out.print("Do you want to continue (y/n): ");
+            option.nextLine().charAt(0);
             do {
                 System.out.println("Choose action to perform: ");
                 System.out.println("1. Withdraw Money");
