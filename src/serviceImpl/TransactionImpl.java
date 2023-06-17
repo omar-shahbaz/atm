@@ -41,7 +41,7 @@ public class TransactionImpl implements Transaction {
 
     @Override
     public double checkBalance() {
-        System.out.println(getBalance());
+        System.out.println("Your current balance is: "+getBalance());
         return getBalance();
     }
 
