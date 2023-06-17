@@ -1,5 +1,6 @@
 import authUser.UserAuth;
 import payload.BankDetails;
+import payload.TransactionMenu;
 import service.Transaction;
 import serviceImpl.TransactionImpl;
 
@@ -11,7 +12,9 @@ public class Main {
 
     public static void main(String[] args) {
         BankDetails bankDetails = new BankDetails();
+        TransactionMenu transactionMenu = new TransactionMenu();
         Transaction transaction = new TransactionImpl();
+
         boolean check = true;
         bankDetails.createBankLogin();
         Scanner scanner = new Scanner(System.in);
@@ -24,14 +27,10 @@ public class Main {
 
         if(UserAuth.USERNAME.equals(currentUser) && UserAuth.PIN.equals(currentPin)){
             bankDetails.createBankScreen();
-
             System.out.print("Do you want to continue (y/n): ");
             option.nextLine().charAt(0);
             do {
-                System.out.println("Choose action to perform: ");
-                System.out.println("1. Withdraw Money");
-                System.out.println("2. Deposit Money");
-                System.out.println("3. Check Balance");
+                transactionMenu.createTransactionWindow();
                 System.out.print("Choose: ");
                 int choice = option.nextInt();
                 switch (choice) {
