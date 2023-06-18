@@ -1,5 +1,6 @@
 import authUser.UserAuth;
 import payload.BankDetails;
+import payload.TransactionHistory;
 import payload.TransactionMenu;
 import service.Transaction;
 import serviceImpl.TransactionImpl;
@@ -11,6 +12,7 @@ public class Main {
     public static void main(String[] args) {
         BankDetails bankDetails = new BankDetails();
         TransactionMenu transactionMenu = new TransactionMenu();
+        TransactionHistory history = new TransactionHistory();
         Transaction transaction = new TransactionImpl();
 
         boolean check;
@@ -44,6 +46,10 @@ public class Main {
                         break;
                     case 3:
                         transaction.checkBalance();
+                        break;
+                    case 4:
+                        history.transactionHistory();
+                        transaction.transactionHistory();
                         break;
                     default:
                         System.out.println("Invalid operation!");
