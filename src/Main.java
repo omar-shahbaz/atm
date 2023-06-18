@@ -4,8 +4,6 @@ import payload.TransactionMenu;
 import service.Transaction;
 import serviceImpl.TransactionImpl;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Main {
@@ -15,7 +13,8 @@ public class Main {
         TransactionMenu transactionMenu = new TransactionMenu();
         Transaction transaction = new TransactionImpl();
 
-        boolean check = true;
+        boolean check;
+
         bankDetails.createBankLogin();
         Scanner scanner = new Scanner(System.in);
         System.out.print("\t\tUsername: ");
@@ -28,8 +27,13 @@ public class Main {
         if(UserAuth.USERNAME.equals(currentUser) && UserAuth.PIN.equals(currentPin)){
             bankDetails.createBankScreen();
             System.out.print("Do you want to continue (y/n): ");
-            option.nextLine().charAt(0);
-            do {
+            char proceed = option.nextLine().charAt(0);
+            if (proceed == 'Y' || proceed == 'y') {
+                check=true;
+            } else {
+                check=false;
+            }
+            while(check) {
                 transactionMenu.createTransactionWindow();
                 System.out.print("Choose: ");
                 int choice = option.nextInt();
@@ -54,7 +58,7 @@ public class Main {
                 if(progress =='N' || progress == 'n'){
                     check = false;
                 }
-            }while (check);
+            }
         }
         else {
             System.out.print("Error!, wrong username/password");
