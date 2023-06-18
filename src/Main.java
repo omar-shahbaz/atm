@@ -28,11 +28,7 @@ public class Main {
             bankDetails.createBankScreen();
             System.out.print("Do you want to continue (y/n): ");
             char proceed = option.nextLine().charAt(0);
-            if (proceed == 'Y' || proceed == 'y') {
-                check=true;
-            } else {
-                check=false;
-            }
+            check= proceed == 'Y' || proceed == 'y';
             while(check) {
                 transactionMenu.createTransactionWindow();
                 System.out.print("Choose: ");
