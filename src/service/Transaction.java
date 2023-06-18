@@ -1,5 +1,7 @@
 package service;
 
+import model.TransactionModel;
+
 import java.util.List;
 
 public interface Transaction {
@@ -9,5 +11,7 @@ public interface Transaction {
     double deposit(int amount);
 
     double checkBalance();
+
+    List<TransactionModel> transactionHistory();
 
 }
