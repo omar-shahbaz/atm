@@ -2,7 +2,7 @@ package payload;
 
 public class TransactionMenu {
 
-    private String[] transactionInfo = new String[4];
+    private String[] transactionInfo = new String[5];
     private String num;
 
     public TransactionMenu(){
@@ -10,6 +10,7 @@ public class TransactionMenu {
         transactionInfo[1] = "Withdraw";
         transactionInfo[2] = "Deposit";
         transactionInfo[3] = "Check Balance";
+        transactionInfo[4] = "Transaction History";
         num = "*";
     }
 
@@ -18,7 +19,7 @@ public class TransactionMenu {
         System.out.format("+------------------------------+%n");
         System.out.format(infoAlignment, num, transactionInfo[0]);
         System.out.format("+------------------------------+%n");
-        for(int i=1;i<4;i++) {
+        for(int i=1;i<5;i++) {
             System.out.format(infoAlignment,i,transactionInfo[i]);
         }
         System.out.format("+------------------------------+%n");
