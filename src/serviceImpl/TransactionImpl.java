@@ -54,13 +54,14 @@ public class TransactionImpl implements Transaction {
             transactionModel.currentBalance = getBalance();
             balance = prevBalance + amount;
         } else {
+            transactionModel.currentBalance = getBalance();
             setBalance(amount);
+
         }
         transactionModel.date = LocalDate.now().toString();
         transactionModel.time = LocalDateTime.now().toLocalTime().toString();
         transactionModel.transactionName = "Deposit";
         transactionModel.transactionAmount = amount;
-        transactionModel.currentBalance = getBalance();
         transactionModel.newBalance = getBalance();
 
         histories.add(transactionModel);
